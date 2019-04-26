@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SampleSpringKafkaApplicationTests {
 
     @Autowired
-    private KafkaTemplate kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     @Test
     public void testDemo() throws Exception {
