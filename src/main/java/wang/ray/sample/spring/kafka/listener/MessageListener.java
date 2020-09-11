@@ -13,18 +13,18 @@ public class MessageListener {
 
     @KafkaListener(id = "demo", topics = "topic.quick.demo")
     public void listen(String msgData) {
-        log.info("demo receive : " + msgData);
+        log.info("listen receive : " + msgData);
     }
 
     @KafkaListener(id = "step1", topics = "topic.quick.step1")
     @SendTo("topic.quick.step2")
     public String listenAndForward(String msgData) {
-        log.info("demo receive : " + msgData);
+        log.info("listenAndForward receive : " + msgData);
         return "forward: " + msgData;
     }
 
     @KafkaListener(id = "step2", topics = "topic.quick.step2")
     public void listenStep2(String msgData) {
-        log.info("demo receive : " + msgData);
+        log.info("listenStep2 receive : " + msgData);
     }
 }
